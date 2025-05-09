@@ -17,7 +17,7 @@ void swapMinMax(T* arr, int size) {
 
 // Спеціалізація для char*
 template <>
-void swapMinMax<char*>(char** arr, int size) {
+void swapMinMax<char*>((char*)* arr, int size) {
     int minI = 0, maxI = 0;
     for (int i = 1; i < size; i++) {
         if (strcmp(arr[i], arr[minI]) < 0) minI = i;
