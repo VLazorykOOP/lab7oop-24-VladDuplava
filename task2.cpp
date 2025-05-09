@@ -10,6 +10,20 @@ void insertionSort(T* arr, int n) {
         int j = i - 1;
 
         // Переміщаємо елементи, які більші за key, на одну позицію вперед
+        while (j >= 0 && arr[j]> key) {
+            arr[j + 1] = arr[j];
+            j = j - 1;
+        }
+        arr[j + 1] = key;  // Вставляємо key на його місце
+    }
+}
+template <>
+void insertionSort<char*>(char** arr, int n) {
+    for (int i = 1; i < n; i++) {
+        char* key = arr[i];  // зберігаємо поточний елемент
+        int j = i - 1;
+
+        // Переміщаємо елементи, які більші за key, на одну позицію вперед
         while (j >= 0 && strcmp(arr[j], key) > 0) {
             arr[j + 1] = arr[j];
             j = j - 1;
